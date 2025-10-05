@@ -1,11 +1,12 @@
 import Link from "next/link";
 import type { Project } from "../libs/projects";
 
+
 export default function ProjectCard({ project }: {project: Project}) {
   return (
     <div className="rounded border p-4">
       <h3 className="text-lg font-semibold">
-        <Link href={`/project/${project.slug}`}>
+        <Link href={`/projects/${project.slug}`}>
           {project.title}
         </Link>
       </h3>

@@ -3,6 +3,9 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+
+const NoSSR = dynamic(() => Promise.resolve(() => null), {ssr: false})
 
 const links = [
   {href: "/", label: "Home"},
@@ -41,8 +44,9 @@ export default function Header(){
   }, [open])
 
   return (
-    <header className={`sticky top-0 z-40 bg-white/70 backdrop-blur dark:bg-slate-950/70 ${scrolled ? "border-b border-slate-200 dark:border-slate-800" : ""}`}
+    <div className={`sticky top-0 z-40 bg-white/70 backdrop-blur dark:bg-slate-950/70 ${scrolled ? "border-b border-slate-200 dark:border-slate-800" : ""}`}
     >
+      <NoSSR/>
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
         <Link href="/" className="font-semibold tracking-tight">Jiebin Zhou</Link>
 
@@ -59,6 +63,6 @@ export default function Header(){
           </a>
         </nav>
       </div>
-    </header>
+    </div>
   )
 }
