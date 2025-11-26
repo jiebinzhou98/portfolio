@@ -126,8 +126,7 @@ body {
   background-color: hsl(var(--background));
 }
 
-/* subtle tech grid + glow */
-/* subtle gradient glow only (no grid) */
+/* subtle gradient glow only (no grid, no visible edges) */
 body::before {
   content: "";
   position: fixed;
@@ -136,14 +135,15 @@ body::before {
   pointer-events: none;
   opacity: 0.45;
 
-  background-image:
-    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.25), transparent 55%),
-    radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.20), transparent 55%);
-  
-  background-size:
-    900px 900px,
-    900px 900px;
+  /* centers are pushed slightly outside the viewport,
+     so we only see the soft inner part */
+  background:
+    radial-gradient(circle at -20% -10%, rgba(56, 189, 248, 0.28), transparent 65%),
+    radial-gradient(circle at 120% 110%, rgba(129, 140, 248, 0.24), transparent 65%);
+
+  background-repeat: no-repeat;
 }
+
 
 
 /* smoother text rendering */
