@@ -120,15 +120,34 @@
     @apply bg-background text-foreground;
   }
 }
-/* soft gradient background */
+
+/* base solid background color */
 body {
-  background:
-    radial-gradient(1200px circle at 10% -10%, hsl(var(--primary) / 0.10), transparent 40%),
-    radial-gradient(1100px circle at 90% 0%, hsl(var(--secondary) / 0.12), transparent 45%),
-    hsl(var(--background));
+  background-color: hsl(var(--background));
 }
+
+/* subtle tech grid + glow */
+/* subtle gradient glow only (no grid) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.25), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.20), transparent 55%);
+  
+  background-size:
+    900px 900px,
+    900px 900px;
+}
+
 
 /* smoother text rendering */
 * {
   text-rendering: geometricPrecision;
 }
+

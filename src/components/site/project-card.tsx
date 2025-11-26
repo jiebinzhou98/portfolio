@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="group relative overflow-hidden border border-muted/60 bg-background/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40">
       {/* glow layer */}
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-primary/10 via-transparent to-secondary/15" />
+      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-primary/10 via-transparent to-secondary/15" />
 
       <CardHeader className="relative">
         <CardTitle className="text-xl md:text-2xl flex items-center justify-between gap-2">
