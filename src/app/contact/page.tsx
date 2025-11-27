@@ -18,7 +18,7 @@ export default function ContactPage() {
 
           <div className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)]">
             {/* Form */}
-            <Card className="border-muted/40 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <Card className="border-muted/40 bg-background/70 backdrop-blur supports-backdrop-filter:bg-background/60">
               <CardContent className="pt-6 space-y-4">
                 {/* Static for now; later we can wire this to email */}
                 <div className="grid md:grid-cols-2 gap-3">
