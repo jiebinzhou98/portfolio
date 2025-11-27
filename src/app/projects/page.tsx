@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   return (
     <Container>
       <FadeIn>
-        <section className="py-12 md:py-16">
+        <section className="py-16 md:py-20">
           <SectionTitle
             title="Projects"
             subtitle="Things I’ve built to learn new tools, solve real problems, or just satisfy my curiosity."

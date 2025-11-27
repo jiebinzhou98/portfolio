@@ -12,7 +12,7 @@ export default function HomePage() {
     <Container>
       {/* Hero */}
       <FadeIn>
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-24">
           <div className="flex flex-col gap-7">
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="w-fit" variant="secondary">
@@ -39,7 +39,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-2xl px-7 transition-transform hover:-translate-y-0.5"
+                className="rounded-2xl px-7 transition-transform duration-150 hover:-translate-y-0.5"
               >
                 <Link href="/projects">View my projects</Link>
               </Button>
@@ -47,7 +47,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-2xl px-7 transition-transform hover:-translate-y-0.5"
+                className="rounded-2xl px-7 transition-transform duration-150 hover:-translate-y-0.5"
               >
                 <Link href="/about">More about me</Link>
               </Button>
@@ -58,7 +58,7 @@ export default function HomePage() {
 
       {/* Featured Projects */}
       <FadeIn delay={0.15}>
-        <section className="py-8 md:py-12">
+        <section className="py-16 md:py-18">
           <SectionTitle
             title="Featured work"
             subtitle="A selection of projects that show how I think and build."
@@ -66,14 +66,18 @@ export default function HomePage() {
 
           <div className="grid gap-4 md:grid-cols-2">
             {projects.slice(0, 4).map((project, i) => (
-              <FadeIn key={project.slug} delay={0.1 * i}>
+              <FadeIn key={project.slug} delay={0.08 * i}>
                 <ProjectCard project={project} />
               </FadeIn>
             ))}
           </div>
 
           <div className="mt-6">
-            <Button asChild variant="ghost" className="px-0">
+            <Button
+              asChild
+              variant="ghost"
+              className="px-0 transition-transform duration-150 hover:-translate-y-0.5"
+            >
               <Link href="/projects">See all projects →</Link>
             </Button>
           </div>

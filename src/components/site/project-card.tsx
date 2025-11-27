@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         className="
           absolute inset-0 pointer-events-none opacity-0
           group-hover:opacity-40 transition-opacity duration-300
-          bg-gradient-to-br from-primary/20 via-transparent to-secondary/20
+          bg-linear-to-br from-primary/20 via-transparent to-secondary/20
         "
       />
 

@@ -9,16 +9,15 @@ export default function AboutPage() {
   return (
     <Container>
       <FadeIn>
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-20">
           <SectionTitle
             title="About me"
             subtitle="A quick snapshot of who I am and how I work."
           />
 
-          <Card className="mt-6 border-muted/40 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/40">
+          <Card className="mt-6 border-muted/40 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <CardContent className="pt-6">
-              {/* Main Text */}
-              <div className="prose prose-neutral dark:prose-invert max-w-none leading-relaxed">
+              <div className="prose prose-neutral dark:prose-invert max-w-2xl leading-relaxed">
                 <p>
                   I’m <strong>Ben Zhou</strong>, a developer based in Toronto.
                   Over the last little while I’ve been teaching myself how to
@@ -28,8 +27,9 @@ export default function AboutPage() {
                 <p>
                   I enjoy the mix of frontend and full-stack work: designing
                   interfaces, wiring up APIs, and making sure everything feels
-                  fast and intentional. My recent projects include a Notion-style
-                  notes app, an expense tracker, and an iOS restaurant finder.
+                  fast and intentional. My recent projects include a
+                  Notion-style notes app, an expense tracker, and an iOS
+                  restaurant finder.
                 </p>
 
                 <p>
@@ -41,7 +41,6 @@ export default function AboutPage() {
 
               <Separator className="my-8" />
 
-              {/* Skills */}
               <h3 className="text-lg font-semibold mb-3">Core skills</h3>
               <div className="flex flex-wrap gap-2">
                 {[

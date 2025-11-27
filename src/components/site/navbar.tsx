@@ -17,10 +17,9 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
+    <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <Container>
         <div className="flex h-16 items-center justify-between">
-
           {/* Logo */}
           <Link
             href="/"
@@ -29,7 +28,7 @@ export default function Navbar() {
             Jiebin Zhou
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {nav.map((item) => {
               const active = pathname === item.href;
@@ -39,7 +38,9 @@ export default function Navbar() {
                   asChild
                   size="sm"
                   variant={active ? "secondary" : "ghost"}
-                  className="rounded-lg"
+                  className={`rounded-lg px-3 transition-all duration-150 ${
+                    active ? "font-medium" : "font-normal"
+                  }`}
                 >
                   <Link href={item.href}>{item.label}</Link>
                 </Button>
@@ -50,12 +51,14 @@ export default function Navbar() {
           {/* Right side */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
-
-            <Button asChild size="sm" className="hidden md:inline-flex rounded-lg">
-              <Link href="/contact">Let’s Talk</Link>
+            <Button
+              asChild
+              size="sm"
+              className="hidden md:inline-flex rounded-lg px-4 transition-transform duration-150 hover:-translate-y-0.5"
+            >
+              <Link href="/contact">Let&apos;s Talk</Link>
             </Button>
           </div>
-
         </div>
       </Container>
 
@@ -69,8 +72,10 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-2 ${
-                    active ? "font-semibold text-foreground" : "text-muted-foreground"
+                  className={`px-2 transition-colors ${
+                    active
+                      ? "font-semibold text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {item.label}
