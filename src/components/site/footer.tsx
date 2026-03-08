@@ -1,14 +1,41 @@
-import Container from "./container";
+import Link from "next/link"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="border-t py-8 mt-16">
-      <Container>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Ben Zhou</p>
-          <p>Built with Next.js + Tailwind + shadcn/ui</p>
+    <footer className="border-t mt-20">
+      <div className="mx-auto max-w-5xl px-6 py-6 flex items-center justify-between text-sm text-muted-foreground">
+
+        <p>© {new Date().getFullYear()} Jiebin Zhou</p>
+
+        <div className="flex items-center gap-4">
+
+          <Link
+            href="https://github.com/YOUR_GITHUB"
+            target="_blank"
+            className="hover:text-foreground"
+          >
+            <Github size={18} />
+          </Link>
+
+          <Link
+            href="https://linkedin.com/in/YOUR_LINKEDIN"
+            target="_blank"
+            className="hover:text-foreground"
+          >
+            <Linkedin size={18} />
+          </Link>
+
+          <Link
+            href="mailto:your@email.com"
+            className="hover:text-foreground"
+          >
+            <Mail size={18} />
+          </Link>
+
         </div>
-      </Container>
+
+      </div>
     </footer>
-  );
+  )
 }

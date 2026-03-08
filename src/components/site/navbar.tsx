@@ -5,6 +5,13 @@ import { usePathname } from "next/navigation";
 import Container from "./container";
 import ThemeToggle from "./theme-toggle";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const nav = [
   { href: "/", label: "Home" },
@@ -20,27 +27,25 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
           <Link
             href="/"
-            className="font-semibold tracking-tight text-lg hover:opacity-80 transition-opacity"
+            className="text-lg font-semibold tracking-tight transition-opacity hover:opacity-80"
           >
-            Jiebin Zhou
+            My Portfolio
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
             {nav.map((item) => {
               const active = pathname === item.href;
+
               return (
                 <Button
                   key={item.href}
                   asChild
                   size="sm"
                   variant={active ? "secondary" : "ghost"}
-                  className={`rounded-lg px-3 transition-all duration-150 ${
-                    active ? "font-medium" : "font-normal"
-                  }`}
+                  className={`rounded-lg px-3 transition-all duration-150 ${active ? "font-medium" : "font-normal"
+                    }`}
                 >
                   <Link href={item.href}>{item.label}</Link>
                 </Button>
@@ -48,9 +53,9 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right side */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
+
             <Button
               asChild
               size="sm"
@@ -58,33 +63,44 @@ export default function Navbar() {
             >
               <Link href="/contact">Let&apos;s Talk</Link>
             </Button>
+
+            {/* Mobile dropdown menu */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent
+                align="end"
+                sideOffset={10}
+                className="w-52 rounded-xl p-2 border shadow-sm md:hidden"
+              >
+                {nav.map((item) => {
+                  const active = pathname === item.href;
+
+                  return (
+                    <DropdownMenuItem
+                      key={item.href}
+                      asChild
+                      className={`rounded-xl px-3 py-3 text-base cursor-pointer ${active ? "bg-muted font-medium text-foreground" : ""
+                        }`}
+                    >
+                      <Link href={item.href}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </Container>
-
-      {/* Mobile nav */}
-      <div className="border-t md:hidden bg-background/80 backdrop-blur">
-        <Container>
-          <nav className="flex items-center justify-between py-3 px-1 text-sm">
-            {nav.map((item) => {
-              const active = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-2 transition-colors ${
-                    active
-                      ? "font-semibold text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-        </Container>
-      </div>
     </header>
   );
 }
