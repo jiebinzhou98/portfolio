@@ -34,7 +34,7 @@ export default function HomePage() {
               </Button>
 
               <Link
-                href="https://github.com/YOUR_GITHUB"
+                href="https://github.com/jiebinzhou98"
                 target="_blank"
                 className="p-3 border rounded-full hover:bg-muted"
               >
@@ -42,7 +42,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                href="https://linkedin.com/in/YOUR_LINKEDIN"
+                href="https://www.linkedin.com/in/jiebin-zhou-5897911a3/"
                 target="_blank"
                 className="p-3 border rounded-full hover:bg-muted"
               >

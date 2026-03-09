@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
 
           <Link
-            href="https://github.com/YOUR_GITHUB"
+            href="https://github.com/jiebinzhou98"
             target="_blank"
             className="hover:text-foreground"
           >
@@ -19,7 +19,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://linkedin.com/in/YOUR_LINKEDIN"
+            href="https://www.linkedin.com/in/jiebin-zhou-5897911a3/"
             target="_blank"
             className="hover:text-foreground"
           >
@@ -27,7 +27,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="mailto:your@email.com"
+            href="mailto:benzhou98@outlook.com"
             className="hover:text-foreground"
           >
             <Mail size={18} />
