@@ -9,35 +9,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "notion-lite",
-    title: "Notion Lite Notes",
+    slug: "second-brain",
+    title: "Second Brain",
     description:
-      "A lightweight Notion-style note app with TipTap editor, PWA support, offline caching, and Supabase auth.",
-    tags: ["Next.js", "Supabase", "TipTap", "PWA"],
-    github: "https://github.com/yourname/notion-lite",
+      "A personal knowledge management tool for organizing ideas, tools, and resources with tagging and structured browsing.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    github: "https://github.com/jiebinzhou98/second_brain",
   },
   {
-    slug: "taskpilot",
-    title: "TaskPilot",
+    slug: "time-calculator",
+    title: "Time Calculator",
     description:
-      "Personal task + expense tracker with priority, dark mode, and clean mobile-first UI.",
-    tags: ["Next.js", "Postgres", "Shadcn UI"],
-    github: "https://github.com/yourname/taskpilot",
-  },
-  {
-    slug: "autofoodfinder",
-    title: "AutoFoodFinder (iOS)",
-    description:
-      "SwiftUI app to discover nearby restaurants using MapKit and CoreLocation.",
-    tags: ["SwiftUI", "MapKit", "iOS"],
-    github: "https://github.com/yourname/autofoodfinder",
-  },
-  {
-    slug: "excel-webapp",
-    title: "Excel-to-Web App",
-    description:
-      "Browser-only data app that imports Excel/CSV/PDF and enables structured editing + export.",
-    tags: ["React", "TypeScript", "Shadcn UI"],
-    github: "https://github.com/yourname/excel-webapp",
+      "A small utility web app for calculating time durations and differences with a clean and simple interface.",
+    tags: ["Next.js", "TypeScript", "Tailwind"],
+    github: "https://github.com/jiebinzhou98/time-calculator",
   },
 ];
