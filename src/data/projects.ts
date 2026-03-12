@@ -14,7 +14,8 @@ export const projects: Project[] = [
     description:
       "A personal knowledge management tool for organizing ideas, tools, and resources with tagging and structured browsing.",
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-    github: "https://github.com/jiebinzhou98/second_brain",
+    href: "https://second-brain-five-iota.vercel.app/",   // deployed site
+    github: "https://github.com/jiebinzhou98/second-brain",
   },
   {
     slug: "time-calculator",
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     description:
       "A small utility web app for calculating time durations and differences with a clean and simple interface.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
+    href: "https://time-calculator-three-sand.vercel.app/", // deployed site
     github: "https://github.com/jiebinzhou98/time-calculator",
   },
 ];
